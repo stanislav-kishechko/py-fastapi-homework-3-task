@@ -113,7 +113,7 @@ async def activate_user(
     if not db_user:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"A user with this email {user_data.email} not exists.",
+            detail="Invalid email or activation token.",
         )
 
     if db_user.is_active:
